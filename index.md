@@ -4,9 +4,9 @@ Some text
 
 **Some text but in Bold**
 
-#This is the first heading
+# This is the first heading
 
-##This is the second heading
+## This is the second heading
 
 [This is a Link to gitHub](https://github.com/)
 
