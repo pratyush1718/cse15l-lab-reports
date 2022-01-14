@@ -54,7 +54,7 @@ scp WhereAmI.java cs15lwi22zz@ieng6.ucsd.edu:~/
 
  ![](SCP_Success.png)
 
- # Setting an SSH Key
+ #Setting an SSH Key
 
  In order to save time and not keep typing in your passwords to run commands like ssh or scp, we will be using keygen to create a pair of public and private keys. These keys will be stored on the client and server side and moving forward, ssh will be able to use this keys automatically!
 
