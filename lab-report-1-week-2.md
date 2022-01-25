@@ -23,17 +23,12 @@ ssh cs15lwi22zz@ieng6.ucsd.edu
 # Trying some commands
 There are numerous commands you can run on the server-side through your terminal. A short list is below:
 
-* ls command lists files in current directory
-* ls -l lists all files in the current directory plus additional info such as last edited 
-* ls -a lists all files including hidden files in the current directory
-* ls -lat lists all files including hidden files in current directory and provides additional info
-* pwd gives absolute path of directory
-* cd by itself takes you back to the home directory
-* mkdir creates a new folder
-* rmdir removes a directory
-* touch creates a new file
-* rm removes a file
-* exit disconnects from server
+* ```ls``` command lists files in current directory
+* ```ls -l``` lists all files in the current directory plus additional info such as last edited 
+* ```pwd``` gives absolute path of directory
+* ```cd``` by itself takes you back to the home directory
+* ```mkdir``` creates a new folder
+* ```exit``` disconnects from server
 
 A working example of a few commands is below:
 
@@ -43,7 +38,16 @@ A working example of a few commands is below:
 
 Let's start by creating a java file on our local computer. We will call it "WhereAmI.java" and it should look something like this:
 
-![](JavaFileForSCP.png)
+```
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+```
 
 Next, in the terminal of your current directory, run the following command on the client-side:
  ```
@@ -89,14 +93,25 @@ Now, if you try running a secure connection to the server again, you will notice
 
 # Optimizing Remote Running
 
-There are many different ways you can optimize remote running to minimize redundant input. I will just be covering the `alias` command
+There are many different ways you can optimize remote running to minimize redundant input. I will just be covering the `alias` command.
 
-Let's say I want to run "java WhereAmI" (from earlier step) over and over again. Well instead of typing the entire command repeatedly, I can store it as an alias using the following command:
+But before that, let's make an edit to our WhereAmI.java file and copy it over to the remote server.
+
+Firstly, navigate to your WhereAmI.java file and add a simple print statement like this:
+```
+System.out.println("this is an edit");
+```
+Next copy over this file to the remote server by using the ```scp``` command we covered earlier:
+```
+scp WhereAmI.java cs15lwi22zz@ieng6.ucsd.edu:~/
+```
+
+Now, let's say I want to run "javac WhereAmI.java" (from earlier step) over and over again. Well instead of typing the entire command repeatedly, I can store it as an alias using the following command:
 
 ```
-alias new="java WhereAmI"
+alias run="javac WhereAmI.java"
 ```
 
-After executing this in the terminal, you can just type in "new" instead of "java WhereAmI" over and over again. Here's what it looks like:
+After executing this in the terminal, you can just type in "run" instead of "java WhereAmI" over and over again. Overall, here's what the process looks like:
 
-![](Optimization.png)
+![](Optimizing.png)
