@@ -1,5 +1,7 @@
 # Lab Report 3 by Pratyush Chand
 
+# Option 1: Streamlining ssh Configuration
+
 ## .ssh/config file location & editing in VS code
 
 ![](config_file_location.png)
