@@ -32,7 +32,7 @@ if(potentialLink.indexOf(" ") == -1 && potentialLink.indexOf("\n") == -1) {
 This is problematic because there is no place to check that the last closing bracket occurs right before the first opening paren.
 
 # Test 2
-Since the issue occurs in test file 201.md, we can compare the expected and actual output.
+Since the issue occurs in test file 41.md, we can compare the expected and actual output.
 
 Expected output:
 []
